@@ -1,5 +1,5 @@
 [Unit]
-Description=MyApp
+Description=OpenVPN
 After=docker.service
 Requires=docker.service
 
