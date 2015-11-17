@@ -20,4 +20,7 @@ Once you're set up, move openvpn.service to /etc/systemd/system/ and install the
     $ sudo systemctl enable /etc/systemd/system/openvpn.service
     $ sudo systemctl start openvpn.service
 
+To confirm the service is up and running, check `docker ps`, or see the output
+from `journalctl -f -u openvpn.service`.
+
 For more info, see [Getting Started with systemd](https://coreos.com/docs/launching-containers/launching/getting-started-with-systemd/).
