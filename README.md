@@ -15,8 +15,9 @@ steps:
     docker run --volumes-from $OVPN_DATA --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
     docker run --volumes-from $OVPN_DATA --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
 
-Once you're set up, move openvpn.service to /etc/systemd/system/ and install the new service with:
+Once you're set up, download openvpn.service to /etc/systemd/system/ and install the new service with:
 
+    $ wget -O /etc/systemd/system/openvpn.service https://raw.githubusercontent.com/mypetyak/unit-openvpn/master/openvpn.service
     $ sudo systemctl enable /etc/systemd/system/openvpn.service
     $ sudo systemctl start openvpn.service
 
