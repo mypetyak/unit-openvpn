@@ -21,6 +21,9 @@ Once you're set up, download openvpn.service to /etc/systemd/system/ and install
     $ sudo systemctl enable /etc/systemd/system/openvpn.service
     $ sudo systemctl start openvpn.service
 
+Then, on your local machine, use `scp` to retrieve CLIENTNAME.ovpn before
+deleting this file on the server.
+
 To confirm the service is up and running, check `docker ps`, or see the output
 from `journalctl -f -u openvpn.service`.
 
