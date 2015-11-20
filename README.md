@@ -11,7 +11,7 @@ steps:
     docker run --name $OVPN_DATA -v /etc/openvpn busybox
     docker run --volumes-from $OVPN_DATA --rm kylemanna/openvpn ovpn_genconfig -u tcp://VPN.SERVERNAME.COM:443
     docker run --volumes-from $OVPN_DATA --rm -it kylemanna/openvpn ovpn_initpki
-    docker run --volumes-from $OVPN_DATA -d -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
+    docker run --volumes-from $OVPN_DATA -d -p 443:1194/tcp --cap-add=NET_ADMIN kylemanna/openvpn
     docker run --volumes-from $OVPN_DATA --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
     docker run --volumes-from $OVPN_DATA --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
 
